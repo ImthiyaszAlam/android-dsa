@@ -30,10 +30,24 @@ public class MoveZeroes {
         }
     }
 
+    public static void moveZeroesToFront(int nums[]) {
+        int write = nums.length - 1;
+
+        for (int read = nums.length - 1; read >= 0; read--) {
+            if (nums[read] != 0) {
+                int temp = nums[read];
+                nums[read] = nums[write];
+                nums[write] = temp;
+                write--;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int nums[] = { 1, 0, 1, 0, 1, 1 };
-      //  moveAllZeroes(nums);
-        moveZeroesOptimalTP(nums);
+        // moveAllZeroes(nums);
+        // moveZeroesOptimalTP(nums);
+        moveZeroesToFront(nums);
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] + " ");
         }
