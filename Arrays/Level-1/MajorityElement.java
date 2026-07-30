@@ -32,7 +32,7 @@ public class MajorityElement {
                 candidate = nums[i];
 
                 // 2,2,1,1,1,2,2
-                //1,2,1,0,1,0,1  so finally 2 survived with score : 1
+                // 1,2,1,0,1,0,1 so finally 2 survived with score : 1
             }
 
             if (candidate == nums[i]) {
@@ -46,8 +46,8 @@ public class MajorityElement {
 
     public static void main(String[] args) {
 
-        int nums[] = { 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1 };
-        int element = majorityElement(nums);
+        int nums[] = { 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, };
+        int element = majorityElementOptimal(nums);
         System.out.println(element);
     }
 }
