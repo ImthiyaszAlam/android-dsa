@@ -18,9 +18,22 @@ public class MissingNumber {
         return -1;
     }
 
+    public static int missingNumberOptimal(int nums[]) {
+
+        int n = nums.length;
+        int expectedSum = n * (n + 1) / 2;
+        int actualSum = 0;
+
+        for (int num : nums) {
+            actualSum += num;
+        }
+
+        return expectedSum - actualSum;
+    }
+
     public static void main(String[] args) {
-        int nums[] = {1,2,4,0};
-        int missingElement= missingNumber(nums);
+        int nums[] = { 1, 2, 4, 0, 6, 3 };
+        int missingElement = missingNumberOptimal(nums);
         System.out.println(missingElement);
 
     }
