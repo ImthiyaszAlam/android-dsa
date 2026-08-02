@@ -24,10 +24,36 @@ public class PivotIndex {
         return -1;
     }
 
+    public static int pivotIndexOptimal(int nums[]) {
+
+        int totalSum = 0;
+
+        for (int num : nums) {
+            totalSum += num;
+        }
+
+        int leftSum = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            leftSum += nums[i];
+            int rightSum = totalSum - leftSum - nums[i];
+
+            if (leftSum == rightSum) {
+                System.out.println("Element is " + nums[i]);
+                return i;
+
+            }
+
+        }
+
+        return -1;
+    }
+
     public static void main(String[] args) {
 
         int nums[] = { 1, 2, 3, 3, 2, 4 };
-        int pivotElement = pivotElement(nums);
-        System.out.println("pivotElement is : " + pivotElement);
+        int pivotIndex = pivotIndexOptimal(nums);
+        System.out.println("pivot Index is : " + pivotIndex);
     }
 }
